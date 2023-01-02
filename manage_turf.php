@@ -102,7 +102,13 @@ if(isset($_POST['submit']))
 Home
 </button>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
- Login
+ Manage Turf
+</button>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+Notification
+</button>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+Feedback
 </button>
                 <!-- <li><a href="matches.html" class="nav-link">Login</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li> -->
