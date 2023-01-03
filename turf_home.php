@@ -1,30 +1,3 @@
-
-<?php
-include 'connection.php';
-session_start();
-if(isset($_POST['submit']))
-{
-    
-
-    $data=mysqli_query($con,"select * from login_tbl where uname='$u_name' and password='$pwd'");
- 
-    if(mysqli_num_rows($data)>0)
-    {
-    
-      // echo "<script>alert('login')</script>";
-     header("location:turf_home.php");
-    }
-    else
-    {
-       echo "<script>alert('Invalid Username or password')</script>";
- 
-    }
-    
-}
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -119,11 +92,7 @@ if(isset($_POST['submit']))
           <div class="col-md-8 blog-content">
            
 
-      <table>
-        <tr>
-          <th></th>
-        </tr>
-      </table>
+      
           </div>
         </div>
       </div>
