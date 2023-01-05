@@ -2,25 +2,10 @@
 <?php
 include 'connection.php';
 session_start();
-if(isset($_POST['submit']))
-{
-    
 
-    $data=mysqli_query($con,"select * from login_tbl where uname='$u_name' and password='$pwd'");
- 
-    if(mysqli_num_rows($data)>0)
-    {
-    
-      // echo "<script>alert('login')</script>";
-     header("location:turf_home.php");
-    }
-    else
-    {
-       echo "<script>alert('Invalid Username or password')</script>";
- 
-    }
-    
-}
+    $data=mysqli_query($con,"SELECT * FROM `turf_tbl` where status='register'");
+// $row=mysqli_fetch_assoc($data);  
+
 ?>
 
 
@@ -78,7 +63,7 @@ if(isset($_POST['submit']))
         <div class="d-flex align-items-center">
           <div class="site-logo">
             <a href="index.html">
-              <img src="images/logo.png" alt="Logo">
+              <img src="images/logonew.png" alt="Logo">
             </a>
           </div>
           <div class="ml-auto">
@@ -106,8 +91,8 @@ if(isset($_POST['submit']))
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-9 mx-auto text-center">
-            <h1 class="text-white">Romolu to stay at Real Nadrid?</h1>
-            <p><span>May 20, 2020</span> <span class="mx-3">&bullet;</span> <span>by Admin</span></p>
+            <h1 class="text-white"></h1>
+            <!-- <p><span>May 20, 2020</span> <span class="mx-3">&bullet;</span> <span>by Admin</span></p> -->
           </div>
         </div>
       </div>
@@ -119,11 +104,47 @@ if(isset($_POST['submit']))
           <div class="col-md-8 blog-content">
            
 
-      <table>
-        <tr>
-          <th></th>
-        </tr>
-      </table>
+          <div class="widget-next-match">
+              <table class="table custom-table">
+                <thead>
+                  <tr>
+                    <th>Turf Name</th>
+                    <th>Turf Location</th>
+                    <th>Owner Name</th>
+                    <th>Photo</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                <?php
+        while($row=mysqli_fetch_assoc($data))
+        {
+        ?>
+    <tr>
+    
+    <td><?php echo $row['Turf_name'];?></td>
+  
+    <td><?php echo $row['Turf_location'];?></td>
+    <td><?php echo $row['owner_name'];?></td>
+   <td><img src="./img/<?php echo $row['image'];?>" height="50" width="50">
+ </td>
+ <td><a href="approve_turf.php?id=<?php echo $row['Turf_id']?>">APPROVE</a></td>
+    <td><a href="delete_turf.php?id=<?php echo $row['Turf_id']?>">REJECT</a></td>
+  
+
+      
+   
+   
+   
+     </tr>
+
+       <?php
+        }
+        ?>
+            </div>
+
           </div>
         </div>
       </div>

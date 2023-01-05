@@ -1,12 +1,13 @@
 <?php
 include 'connection.php';
-$data=mysqli_query($con,"select * from turf_tbl where status='approve'");
-//  $row=mysqli_fetch_assoc(($data));
+$Turf_id=$_POST["Turf_id"];
+$data=mysqli_query($con,"select * from turf_tbl where Turf_id='$Turf_id'");
+ $row=mysqli_fetch_assoc(($data));
+
  $list=array();
  if(mysqli_num_rows($data)>0)
  {
-while($row=mysqli_fetch_assoc(($data)))
-{
+
     $myarray['Turf_id']=$row['Turf_id'];
     $myarray['Turf_name']=$row['Turf_name'];
     $myarray['Turf_location']=$row['Turf_location'];
@@ -17,14 +18,14 @@ while($row=mysqli_fetch_assoc(($data)))
     $myarray['owner_ph']=$row['owner_ph'];
     $myarray['licence']=$row['licence'];
     $myarray['rate']=$row['rate'];
-    array_push($list,$myarray);
-}
+    // array_push($list,$myarray);
+
 }
  else
  {
     $myarray['message']="failed";
-    array_push($list,$myarray);
+    // array_push($list,$myarray);
 
  }
- echo json_encode($list);
+ echo json_encode($myarray);
 

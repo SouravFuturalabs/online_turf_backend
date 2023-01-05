@@ -8,7 +8,7 @@ $uname=$_POST["uname"];
 
 $pwd=$_POST["password"];
 
- $data=mysqli_query($con,"SELECT Cid,Cname,CEmail,type from custreg_tbl INNER join login_tbl on custreg_tbl.Cid=login_tbl.Login_id WHERE login_tbl.uname='$uname' and login_tbl.password='$pwd'");
+ $data=mysqli_query($con,"SELECT Cid,Cname,CEmail,type from custreg_tbl INNER join login_tbl on custreg_tbl.CEmail=login_tbl.uname WHERE login_tbl.uname='$uname' and login_tbl.password='$pwd'");
  $row=mysqli_fetch_assoc(($data));
  if(mysqli_num_rows($data)>0)
  {
@@ -25,7 +25,7 @@ $pwd=$_POST["password"];
 }
  else
  {
-   $data1=mysqli_query($con,"SELECT Turf_id,Turf_name,Owner_email,type from turf_tbl INNER join login_tbl on turf_tbl.Turf_id=login_tbl.Login_id WHERE login_tbl.uname='$uname' and login_tbl.password='$pwd'");
+   $data1=mysqli_query($con,"SELECT Turf_id,Turf_name,Owner_email,type from turf_tbl INNER join login_tbl on turf_tbl.Owner_email=login_tbl.uname WHERE login_tbl.uname='$uname' and login_tbl.password='$pwd' and status='approve'");
    $row1=mysqli_fetch_assoc(($data1));
    if(mysqli_num_rows($data1)>0)
  {
