@@ -72,8 +72,8 @@ session_start();
                 <li><a href="turf_home.php" class="nav-link" >Home</a></li>
                 <li><a href="manage_turf.php" class="nav-link"> Manage Turf</a></li>
                 <li><a href="view_notification.php" class="nav-link">Notification</a></li>
-                <!-- <li class="active"><a href="blog.html" class="nav-link">Blog</a></li> -->
-                <li><a href="view_feedback.php" class="nav-link">Contact</a></li>
+                <li><a href="view_feedback.php" class="nav-link">Feedback</a></li>
+                <li><a href="view_feedback.php" class="nav-link">Change Password</a></li>
               </ul>
             </nav>
 

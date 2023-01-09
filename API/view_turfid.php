@@ -1,13 +1,12 @@
 <?php
 include 'connection.php';
 $Turf_id=$_POST["Turf_id"];
-$data=mysqli_query($con,"select * from turf_tbl where Turf_id='$Turf_id'");
+$data=mysqli_query($con,"select * from turf_tbl INNER join login_tbl on login_tbl.uname=turf_tbl.Owner_email where Turf_id='$Turf_id'");
  $row=mysqli_fetch_assoc(($data));
 
  $list=array();
  if(mysqli_num_rows($data)>0)
  {
-
     $myarray['Turf_id']=$row['Turf_id'];
     $myarray['Turf_name']=$row['Turf_name'];
     $myarray['Turf_location']=$row['Turf_location'];
@@ -17,6 +16,7 @@ $data=mysqli_query($con,"select * from turf_tbl where Turf_id='$Turf_id'");
     $myarray['Owner_email']=$row['Owner_email'];
     $myarray['owner_ph']=$row['owner_ph'];
     $myarray['licence']=$row['licence'];
+    $myarray['password']=$row['password'];
     $myarray['rate']=$row['rate'];
     // array_push($list,$myarray);
 
