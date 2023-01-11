@@ -1,7 +1,7 @@
 <?php
 include 'connection.php';
 $Cid=$_POST["Cid"];
-$data=mysqli_query($con,"SELECT * FROM `book_tbl` inner join turf_tbl ON book_tbl.Turf_id=turf_tbl.Turf_id WHERE Cid='$Cid' and book_tbl.status='register'");
+$data=mysqli_query($con,"SELECT * FROM `book_tbl` inner join turf_tbl ON book_tbl.Turf_id=turf_tbl.Turf_id WHERE Cid='$Cid' and Book_status!='cancel'");
 //  $row=mysqli_fetch_assoc(($data));
  $list=array();
  if(mysqli_num_rows($data)>0)
