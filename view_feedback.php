@@ -3,7 +3,7 @@
 include 'connection.php';
 session_start();
 
-    $data=mysqli_query($con,"SELECT * FROM `feedback_tbl`");
+    $data=mysqli_query($con,"SELECT * FROM `feedback_tbl` INNER JOIN custreg_tbl on custreg_tbl.Cid=feedback_tbl.Cid");
 // $row=mysqli_fetch_assoc($data);  
 
 ?>
@@ -123,7 +123,7 @@ session_start();
     <tr>
     <td><?php echo $row['Feed_id'];?></td>
   
-    <td><?php echo $row['Cid'];?></td>
+    <td><?php echo $row['Cname'];?></td>
   
     <td><?php echo $row['Feedback'];?></td>
      

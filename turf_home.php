@@ -81,8 +81,8 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-9 mx-auto text-center">
-            <h1 class="text-white">Romolu to stay at Real Nadrid?</h1>
-            <p><span>May 20, 2020</span> <span class="mx-3">&bullet;</span> <span>by Admin</span></p>
+            <h1 class="text-white">SXtreme</h1>
+            <!-- <p><span>May 20, 2020</span> <span class="mx-3">&bullet;</span> <span>by Admin</span></p> -->
           </div>
         </div>
       </div>

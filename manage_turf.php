@@ -74,6 +74,7 @@ session_start();
                 <li><a href="view_notification.php" class="nav-link">Notification</a></li>
                 <li><a href="view_feedback.php" class="nav-link">Feedback</a></li>
                 <li><a href="view_feedback.php" class="nav-link">Change Password</a></li>
+                <li><a href="index.php" class="nav-link">Logout</a></li>
               </ul>
             </nav>
 

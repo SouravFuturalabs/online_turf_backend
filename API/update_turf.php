@@ -41,7 +41,7 @@ $owner_ph=$_POST["owner_ph"];
 $password=$_POST["password"];
 $rate=$_POST["rate"];
 
- $data=mysqli_query($con,"UPDATE `turf_tbl` SET `Turf_name`='$Turf_name',`Turf_location`='$Turf_location',`owner_acc`='$owner_name',`owner_name`='$owner_name',`Owner_email`='$Owner_email',`owner_ph`='$owner_ph',`rate`='$rate' WHERE Turf_id='$turf_id'");
+ $data=mysqli_query($con,"UPDATE `turf_tbl` SET `Turf_name`='$Turf_name',`Turf_location`='$Turf_location',`owner_acc`='$owner_acc',`owner_name`='$owner_name',`Owner_email`='$Owner_email',`owner_ph`='$owner_ph',`rate`='$rate' WHERE Turf_id='$turf_id'");
  mysqli_query($con,"UPDATE `login_tbl` SET `uname`='$Owner_email',`password`='$password',`type`='turf' WHERE uname='$Owner_emailold'");
  if($data)
  {
