@@ -39,7 +39,7 @@ if($lic != "")
 $password=$_POST["password"];
 $rate=$_POST["rate"];
 $status='register';
- $data=mysqli_query($con,"INSERT INTO `turf_tbl`(`Turf_name`, `Turf_location`, `owner_acc`, `owner_name`, `image`, `Owner_email`, `owner_ph`, `licence`,`rate`,`status`) VALUES ('$Turf_name','$Turf_location','$owner_acc','$owner_name','$filenew','$Owner_email','$owner_ph','$filenew1','$rate','$status')");
+ $data=mysqli_query($con,"INSERT INTO `turf_tbl`(`Turf_name`, `Turf_location`, `owner_acc`, `owner_name`, `image`, `Owner_email`, `owner_ph`, `licence`,`rate`,`status`) VALUES ('$Turf_name','$Turf_location','$owner_acc','$owner_name','$filenew','$Owner_email','$owner_ph','$filenew','$rate','$status')");
  mysqli_query($con,"INSERT INTO `login_tbl`(`uname`, `password`, `type`) VALUES ('$Owner_email','$password','turf')");
  if($data)
  {

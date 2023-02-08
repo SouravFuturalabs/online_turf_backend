@@ -16,10 +16,9 @@ session_start();
 <head>
     <style>
         table,tr
-        {
-            
-            color:white;
-            border:2px solid crimson;
+        {     background-color: crimson; 
+          color:white;
+            border:2px solid white;
         }
     </style>
   <title>Soccer &mdash; Website by Colorlib</title>
@@ -85,9 +84,7 @@ session_start();
                     <th>Location</th>
                     <th>Name</th>
                     <th>Photo</th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
+                 
                   </tr>
                 </thead>
                 <tbody>
@@ -98,7 +95,7 @@ session_start();
         ?>
     <tr>
     
-    <td><a href="turf_details1.php?id=<?php echo $row['Turf_id'];?>"><?php echo $row['Turf_name'];?></a></td>
+    <td><a style="color:yellow" href="turf_details1.php?id=<?php echo $row['Turf_id'];?>"><?php echo $row['Turf_name'];?></a></td>
   
     <td><?php echo $row['Turf_location'];?></td>
     <td><?php echo $row['owner_name'];?></td>

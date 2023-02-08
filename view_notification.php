@@ -15,11 +15,11 @@ session_start();
 
 <head>
 <style>
-        table,tr
+        table,tr,td,th
         {
-            
-            color:white;
-            border:2px solid crimson;
+          background-color: crimson; 
+          color:white;
+            border:2px solid white;
         }
     </style>
   <title>Soccer &mdash; Website by Colorlib</title>

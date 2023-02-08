@@ -17,9 +17,9 @@ $id=$_GET["id"];
     <style>
         table,tr
         {
-            
-            color:white;
-            border:2px solid crimson;
+          background-color: crimson; 
+          color:white;
+            border:2px solid white;
         }
     </style>
   <title>Soccer &mdash; Website by Colorlib</title>
@@ -85,14 +85,14 @@ $id=$_GET["id"];
                     
                         <tr>
                         
-                          <td>Turf:</td> <td><label for="lid" name="lid" ><?php echo $row['Turf_id'];?></label></td> <td rowspan="9">photo<img src="./img/<?php echo $row['image'];?>" height="200" width="200" alt=""></td></tr>
+                          <td>Turf:</td> <td><label for="lid" name="lid" ><?php echo $row['Turf_id'];?></label></td> <td rowspan="9">photo:<img src="./img/<?php echo $row['image'];?>" height="200" width="200" alt=""><br><br> Licence:<img src="./img/<?php echo $row['licence'];?>" height="200" width="200" alt=""></td></tr>
                        <tr> <td>  <label for="">Name:</td> <td><?php echo $row['Turf_name'];?></label></td> </tr></tr>
                        <tr> <td>  <label for="">Location:</td> <td><?php echo $row['Turf_location'];?></label></td> </tr></tr>  
     <tr><td> <label for="">Owner:</td><td> <?php echo $row['owner_name'];?></label></tr>
     <tr><td><label for="">Email:</td><td><?php echo $row['Owner_email'];?></label></td></tr>
     <tr><td><label for="">Phone:</td><td><?php echo $row['owner_ph'];?></label></td></tr>
     <tr> <td><label for="">Account:</td><td><?php echo $row['owner_acc'];?></label></td></tr>
-    <tr> <td><label for="">Licence:</td><td><?php echo $row['licence'];?></label></td></tr> 
+    <!-- <tr> <td><label for="">Licence:</td><td><?php echo $row['licence'];?></label></td></tr>  -->
     <tr><td> <label for="">Rate:</td><td> <?php echo $row['rate'];?></label></td></tr>
    
             <!-- <tr><td></td><td> <input name="submit" type="submit" value="submit" />  </tr>       -->

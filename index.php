@@ -126,7 +126,7 @@ Home
          
         
           <tr>
-          <td>Password:</td><td><input type="text" name="pwd" style="border: 1px solid black;" class="form-control-sm" id="inputPassword"></td>
+          <td>Password:</td><td><input type="password" name="pwd" style="border: 1px solid black;" class="form-control-sm" id="inputPassword"></td>
           </tr>
           
 

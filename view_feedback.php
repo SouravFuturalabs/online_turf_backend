@@ -3,7 +3,7 @@
 include 'connection.php';
 session_start();
 
-    $data=mysqli_query($con,"SELECT * FROM `feedback_tbl` INNER JOIN custreg_tbl on custreg_tbl.Cid=feedback_tbl.Cid");
+    $data=mysqli_query($con,"SELECT * FROM `feedback_tbl` INNER JOIN custreg_tbl on custreg_tbl.Cid=feedback_tbl.Cid INNER join turf_tbl ON turf_tbl.Turf_id=feedback_tbl.Turf_id");
 // $row=mysqli_fetch_assoc($data);  
 
 ?>
@@ -17,9 +17,9 @@ session_start();
 <style>
         table,tr
         {
-            
-            color:white;
-            border:2px solid crimson;
+          background-color: crimson; 
+          color:white;
+            border:2px solid white;
         }
     </style>
   <title>Soccer &mdash; Website by Colorlib</title>
@@ -85,6 +85,7 @@ include 'sidebar.php';
                 <thead>
                   <tr>
                     <th>Id</th>
+                    <th>Turf</th>
                     <th>Customer</th>
                     <th>Feed back</th>
                     
@@ -97,7 +98,7 @@ include 'sidebar.php';
         ?>
     <tr>
     <td><?php echo $row['Feed_id'];?></td>
-  
+    <td><?php echo $row['Turf_name'];?></td>
     <td><?php echo $row['Cname'];?></td>
   
     <td><?php echo $row['Feedback'];?></td>

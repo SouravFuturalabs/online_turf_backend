@@ -14,6 +14,15 @@ session_start();
 <html lang="en">
 
 <head>
+<style>
+        table,tr
+        {
+            
+          background-color: crimson; 
+          color:white;
+            border:2px solid white;
+        }
+    </style>
   <title>Soccer &mdash; Website by Colorlib</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -74,12 +83,12 @@ include 'sidebar.php';
                 <thead>
                   <tr>
                     <th>Turf Name</th>
-                    <th>Turf Location</th>
-                    <th>Owner Name</th>
+                    <!-- <th>Turf Location</th> -->
+                    <!-- <th>Owner Name</th> -->
                     <th>Photo</th>
                   <th></th>
                   <th></th>
-                  <th></th>
+                 
                   </tr>
                 </thead>
                 <tbody>
@@ -92,17 +101,13 @@ include 'sidebar.php';
     
     <td><?php echo $row['Turf_name'];?></td>
   
-    <td><?php echo $row['Turf_location'];?></td>
-    <td><?php echo $row['owner_name'];?></td>
+    <!-- <td><?php echo $row['Turf_location'];?></td>
+    <td><?php echo $row['owner_name'];?></td> -->
    <td><img src="./img/<?php echo $row['image'];?>" height="50" width="50">
  </td>
- <td><a href="approve_turf.php?id=<?php echo $row['Turf_id']?>">APPROVE</a></td>
-    <td><a href="delete_turf.php?id=<?php echo $row['Turf_id']?>">REJECT</a></td>
+ <td><a style="color:white" href="approve_turf.php?id=<?php echo $row['Turf_id']?>">APPROVE</a></td>
+    <td><a style="color:white" href="delete_turf.php?id=<?php echo $row['Turf_id']?>">REJECT</a></td>
   
-
-      
-   
-   
    
      </tr>
 
