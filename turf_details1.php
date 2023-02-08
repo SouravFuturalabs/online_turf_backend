@@ -2,9 +2,9 @@
 <?php
 include 'connection.php';
 session_start();
-
-    $data=mysqli_query($con,"SELECT * FROM `turf_tbl` where status='register'");
-// $row=mysqli_fetch_assoc($data);  
+$id=$_GET["id"];
+    $data=mysqli_query($con,"SELECT * FROM `turf_tbl` where turf_id='$id'");
+ $row=mysqli_fetch_assoc($data);  
 
 ?>
 
@@ -14,6 +14,14 @@ session_start();
 <html lang="en">
 
 <head>
+    <style>
+        table,tr
+        {
+            
+            color:white;
+            border:2px solid crimson;
+        }
+    </style>
   <title>Soccer &mdash; Website by Colorlib</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -57,9 +65,9 @@ session_start();
     </div>
 
 
-    <?php
-include 'sidebar.php';
-?>
+  <?php
+  include 'sidebar.php';
+  ?>
 
   
     
@@ -70,47 +78,28 @@ include 'sidebar.php';
             <h1 class="text-white"></h1>
             
           <div class="widget-next-match" style="margin-top: 200px; margin-bottom: 20px;">
-              <table class="table custom-table" >
-                <thead>
-                  <tr>
-                    <th>Turf Name</th>
-                    <th>Turf Location</th>
-                    <th>Owner Name</th>
-                    <th>Photo</th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-              
-                 <?php
-        while($row=mysqli_fetch_assoc($data))
-        {
-        ?>
-    <tr>
-    
-    <td><?php echo $row['Turf_name'];?></td>
-  
-    <td><?php echo $row['Turf_location'];?></td>
-    <td><?php echo $row['owner_name'];?></td>
-   <td><img src="./img/<?php echo $row['image'];?>" height="50" width="50">
- </td>
- <td><a href="approve_turf.php?id=<?php echo $row['Turf_id']?>">APPROVE</a></td>
-    <td><a href="delete_turf.php?id=<?php echo $row['Turf_id']?>">REJECT</a></td>
-  
-
-      
+          <form  method="POST">
+                     <div class="bg-primary text-center p-5">
+                       
+                    <table class="table table-bordered"><h1 class="mb-4">Turf</h1>
+                    
+                        <tr>
+                        
+                          <td>Turf:</td> <td><label for="lid" name="lid" ><?php echo $row['Turf_id'];?></label></td> <td rowspan="9">photo<img src="./img/<?php echo $row['image'];?>" height="200" width="200" alt=""></td></tr>
+                       <tr> <td>  <label for="">Name:</td> <td><?php echo $row['Turf_name'];?></label></td> </tr></tr>
+                       <tr> <td>  <label for="">Location:</td> <td><?php echo $row['Turf_location'];?></label></td> </tr></tr>  
+    <tr><td> <label for="">Owner:</td><td> <?php echo $row['owner_name'];?></label></tr>
+    <tr><td><label for="">Email:</td><td><?php echo $row['Owner_email'];?></label></td></tr>
+    <tr><td><label for="">Phone:</td><td><?php echo $row['owner_ph'];?></label></td></tr>
+    <tr> <td><label for="">Account:</td><td><?php echo $row['owner_acc'];?></label></td></tr>
+    <tr> <td><label for="">Licence:</td><td><?php echo $row['licence'];?></label></td></tr> 
+    <tr><td> <label for="">Rate:</td><td> <?php echo $row['rate'];?></label></td></tr>
    
-   
-   
-     </tr>
-
-       <?php
-        }
-        ?> 
-                </tbody>
-        </table>
+            <!-- <tr><td></td><td> <input name="submit" type="submit" value="submit" />  </tr>       -->
+            <!-- <tr><td colspan="2"><button name="submit"  class="btn btn-info btn-lg">Issue</button> </td></tr>      -->
+                    </table>
+         
+                    </form>
             </div>
             <!-- <p><span>May 20, 2020</span> <span class="mx-3">&bullet;</span> <span>by Admin</span></p> -->
           </div>
