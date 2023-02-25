@@ -1,21 +1,16 @@
 
 <?php
 include 'connection.php';
-session_start();
-$id=$_GET["id"];
-    $data=mysqli_query($con,"SELECT * FROM `turf_tbl` where turf_id='$id'");
- $row=mysqli_fetch_assoc($data);  
-
+$id=$_GET['id'];
 ?>
-
 
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <style>
-        table,tr
+<style>
+        table,tr,td,th
         {
           background-color: crimson; 
           color:white;
@@ -65,9 +60,9 @@ $id=$_GET["id"];
     </div>
 
 
-  <?php
-  include 'sidebar.php';
-  ?>
+    <?php
+include 'sidebar.php';
+?>
 
   
     
@@ -76,50 +71,40 @@ $id=$_GET["id"];
         <div class="row align-items-center">
           <div class="col-lg-9 mx-auto text-center">
             <h1 class="text-white"></h1>
-            
-          <div class="widget-next-match" style="margin-top: 200px; margin-bottom: 20px;">
-          <form  method="POST" action="manage_turf.php">
-                     <div class="bg-primary text-center p-5">
-                       
-                    <table class="table table-bordered"><h1 class="mb-4">Turf</h1>
-                    
-                        <tr>
-                        
-                          <td>Turf:</td> <td><label for="lid" name="lid" ><?php echo $row['Turf_id'];?></label></td> <td rowspan="9">photo:<a href="view_image.php?id=<?php echo $row['image'];?>"><img src="./img/<?php echo $row['image'];?>" height="200" width="200" alt=""></a><br><br> Licence:<a href="view_image.php?id=<?php echo $row['image'];?>"><img src="./img/<?php echo $row['licence'];?>" height="200" width="200" alt=""></a></td></tr>
-                       <tr> <td>  <label for="">Name:</td> <td><?php echo $row['Turf_name'];?></label></td> </tr></tr>
-                       <tr> <td>  <label for="">Location:</td> <td><?php echo $row['Turf_location'];?></label></td> </tr></tr>  
-    <tr><td> <label for="">Owner:</td><td> <?php echo $row['owner_name'];?></label></tr>
-    <tr><td><label for="">Email:</td><td><?php echo $row['Owner_email'];?></label></td></tr>
-    <tr><td><label for="">Phone:</td><td><?php echo $row['owner_ph'];?></label></td></tr>
-    <tr> <td><label for="">Account:</td><td><?php echo $row['owner_acc'];?></label></td></tr>
-    <!-- <tr> <td><label for="">Licence:</td><td><?php echo $row['licence'];?></label></td></tr>  -->
-    <tr><td> <label for="">Rate:</td><td> <?php echo $row['rate'];?></label></td></tr>
-   
-            <!-- <tr><td></td><td> <input name="submit" type="submit" value="submit" />  </tr>       -->
-            <tr><td colspan="2"><button name="submit"  class="btn btn-info btn-lg" value="">Back</button></td></tr>     
-                    </table>
-         
-                    </form>
+
+
+            <div>
+            <form action="manage_turf.php" method="post">
+            <img src="./img/<?php echo $id?>" height="400" width="400"><br><br></b>
+            <button name="submit"  class="btn btn-primary" width="50%" value="">Back</button>
             </div>
+</form>
+
+
+
+
+
+
+
             <!-- <p><span>May 20, 2020</span> <span class="mx-3">&bullet;</span> <span>by Admin</span></p> -->
           </div>
         </div>
       </div>
-      
     </div>
-<!-- 
+
     <div class="site-section first-section">
       <div class="container">
         <div class="row">
           <div class="col-md-8 blog-content">
            
 
+       
 
           </div>
         </div>
       </div>
 
-  </div> -->
+  </div>
   <!-- .site-wrap -->
 
   <script src="js/jquery-3.3.1.min.js"></script>

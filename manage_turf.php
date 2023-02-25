@@ -86,9 +86,10 @@ include 'sidebar.php';
                     <!-- <th>Turf Location</th> -->
                     <!-- <th>Owner Name</th> -->
                     <th>Photo</th>
+                  <th>Licence</th>
                   <th></th>
                   <th></th>
-                 
+           
                   </tr>
                 </thead>
                 <tbody>
@@ -104,7 +105,9 @@ include 'sidebar.php';
     <!-- <td><?php echo $row['Turf_location'];?></td>
     <td><?php echo $row['owner_name'];?></td> -->
    <td><img src="./img/<?php echo $row['image'];?>" height="50" width="50">
- </td>
+   <td><img src="./img/<?php echo $row['licence'];?>" height="50" width="50" alt="">
+
+  </td>
  <td><a style="color:white" href="approve1_turf.php?id=<?php echo $row['Turf_id']?>">APPROVE</a></td>
     <td><a style="color:white" href="delete1_turf.php?id=<?php echo $row['Turf_id']?>">REJECT</a></td>
   
