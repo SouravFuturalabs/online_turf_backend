@@ -99,14 +99,14 @@ include 'sidebar.php';
         ?>
     <tr>
     
-    <td><?php echo $row['Turf_name'];?></td>
+    <td><a style="color:yellow" href="turf_details2.php?id=<?php echo $row['Turf_id'];?>"><?php echo $row['Turf_name'];?></a></td>
   
     <!-- <td><?php echo $row['Turf_location'];?></td>
     <td><?php echo $row['owner_name'];?></td> -->
    <td><img src="./img/<?php echo $row['image'];?>" height="50" width="50">
  </td>
- <td><a style="color:white" href="approve_turf.php?id=<?php echo $row['Turf_id']?>">APPROVE</a></td>
-    <td><a style="color:white" href="delete_turf.php?id=<?php echo $row['Turf_id']?>">REJECT</a></td>
+ <td><a style="color:white" href="approve1_turf.php?id=<?php echo $row['Turf_id']?>">APPROVE</a></td>
+    <td><a style="color:white" href="delete1_turf.php?id=<?php echo $row['Turf_id']?>">REJECT</a></td>
   
    
      </tr>

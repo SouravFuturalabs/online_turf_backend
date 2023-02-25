@@ -7,7 +7,7 @@ $data=mysqli_query($con,"SELECT * FROM `book_tbl` INNER JOIN custreg_tbl on cust
  $list=array();
  if(mysqli_num_rows($data)>0)
  {
-    while($row=mysqli_fetch_assoc(($data)))
+    while($row=mysqli_fetch_assoc($data))
     { 
         $myarray['Book_id']=$row['Book_id'];
     $myarray['Cname']=$row['Cname'];

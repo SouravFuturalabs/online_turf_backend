@@ -78,7 +78,7 @@ $id=$_GET["id"];
             <h1 class="text-white"></h1>
             
           <div class="widget-next-match" style="margin-top: 200px; margin-bottom: 20px;">
-          <form  method="POST">
+          <form  method="POST" action="delete_turfmanage.php?id=<?php echo $row['Turf_id'];?>">
                      <div class="bg-primary text-center p-5">
                        
                     <table class="table table-bordered"><h1 class="mb-4">Turf</h1>
@@ -96,7 +96,7 @@ $id=$_GET["id"];
     <tr><td> <label for="">Rate:</td><td> <?php echo $row['rate'];?></label></td></tr>
    
             <!-- <tr><td></td><td> <input name="submit" type="submit" value="submit" />  </tr>       -->
-            <!-- <tr><td colspan="2"><button name="submit"  class="btn btn-info btn-lg">Issue</button> </td></tr>      -->
+            <tr><td colspan="2"><button name="submit"  class="btn btn-info btn-lg" value="">DELETE</button> </td></tr>     
                     </table>
          
                     </form>
