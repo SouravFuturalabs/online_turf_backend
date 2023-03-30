@@ -18,6 +18,7 @@ $data=mysqli_query($con,"select * from turf_tbl INNER join login_tbl on login_tb
     $myarray['licence']=$row['licence'];
     $myarray['password']=$row['password'];
     $myarray['rate']=$row['rate'];
+    $myarray['truf_available']=$row['available'];
     // array_push($list,$myarray);
 
 }

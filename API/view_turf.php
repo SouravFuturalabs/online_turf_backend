@@ -17,6 +17,7 @@ while($row=mysqli_fetch_assoc(($data)))
     $myarray['owner_ph']=$row['owner_ph'];
     $myarray['licence']=$row['licence'];
     $myarray['rate']=$row['rate'];
+    $myarray['truf_available']=$row['available'];
     array_push($list,$myarray);
 }
 }

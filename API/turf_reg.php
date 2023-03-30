@@ -5,6 +5,7 @@ $Turf_name=$_POST["Turf_name"];
 $Turf_location=$_POST["Turf_location"];
 $owner_acc=$_POST["owner_acc"];
 $owner_name=$_POST["owner_name"];
+$turf_availabe=$_POST["available"];
 //  $image=$_POST["image"];
 $pic=$_FILES['image']['name'];
 if($pic != "")
@@ -39,7 +40,7 @@ if($lic != "")
 $password=$_POST["password"];
 $rate=$_POST["rate"];
 $status='register';
- $data=mysqli_query($con,"INSERT INTO `turf_tbl`(`Turf_name`, `Turf_location`, `owner_acc`, `owner_name`, `image`, `Owner_email`, `owner_ph`, `licence`,`rate`,`status`) VALUES ('$Turf_name','$Turf_location','$owner_acc','$owner_name','$filenew','$Owner_email','$owner_ph','$filenew','$rate','$status')");
+ $data=mysqli_query($con,"INSERT INTO `turf_tbl`(`Turf_name`, `Turf_location`, `owner_acc`, `owner_name`, `image`, `Owner_email`, `owner_ph`, `licence`,`rate`,`status`,`available`) VALUES ('$Turf_name','$Turf_location','$owner_acc','$owner_name','$filenew','$Owner_email','$owner_ph','$filenew','$rate','$status','$turf_availabe)");
  mysqli_query($con,"INSERT INTO `login_tbl`(`uname`, `password`, `type`) VALUES ('$Owner_email','$password','turf')");
  if($data)
  {

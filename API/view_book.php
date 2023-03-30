@@ -15,6 +15,7 @@ while($row=mysqli_fetch_assoc(($data)))
     $myarray['time_slot']=$row['time_slot'];
     $myarray['bdate']=$row['bdate'];
     $myarray['Book_status']=$row['Book_status'];
+    $myarray['amount']=$row['amount'];
     array_push($list,$myarray);
 }
 }
