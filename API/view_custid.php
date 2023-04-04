@@ -15,6 +15,7 @@ $data=mysqli_query($con,"SELECT * FROM `custreg_tbl`inner join login_tbl on cust
     $myarray['Cdob']=$row['Cdob'];
     $myarray['Caddress']=$row['Caddress'];
     $myarray['password']=$row['password'];
+    $myarray['customer_photo']=$row['customer_photo'];
     // array_push($list,$myarray);
 
 }
